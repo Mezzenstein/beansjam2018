@@ -3,6 +3,6 @@ Our repository for Rocketbean's #beansjam 2018. Made with Godot engine.
 
 ## Description
 
-## Built With
-
+## Links
+* [itch.io](https://godotengine.org/) - Our game's jam page on itch.io (todo: add link)
 * [Godot](https://godotengine.org/) - The game engine

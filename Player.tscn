@@ -11,12 +11,17 @@ height = 12.6185
 
 [node name="Player" type="KinematicBody2D"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 speed = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -27,11 +32,15 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 20, 30 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 2.77865, 0.153385 )
-scale = Vector2( 2.51429, 2.03842 )
+position = Vector2( 2.24074, 0.385813 )
+scale = Vector2( 2.68665, 2.07006 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 

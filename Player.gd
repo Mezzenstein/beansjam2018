@@ -4,6 +4,10 @@ export (int) var speed = 200
 
 var velocity = Vector2()
 
+func _ready():
+	position = $'../level/playerspawn'.position
+	print(position)
+
 func get_input():
     velocity = Vector2()
     if Input.is_action_pressed('ui_right'):

@@ -1,4 +1,4 @@
-# beansjam2018
+# Beansjam2018
 Our repository for Rocketbean's #beansjam 2018. Made with Godot engine.
 
 ## Description

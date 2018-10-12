@@ -1,5 +1,37 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Node2D" type="Node2D" index="0"]
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/sheet_charactersEquipment.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 12.6185
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+speed = 200
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.40094, 0.689789 )
+scale = Vector2( 2.73532, 2.21369 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 20, 30 )
+_sections_unfolded = [ "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 2.77865, 0.153385 )
+scale = Vector2( 2.51429, 2.03842 )
+shape = SubResource( 1 )
 
 

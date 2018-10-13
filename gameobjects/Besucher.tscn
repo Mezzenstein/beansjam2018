@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/sheet_charactersEquipment.png" type="Texture" id=1]
+[ext_resource path="res://gameobjects/Besucher.gd" type="Script" id=1]
+[ext_resource path="res://assets/sheet_charactersEquipment.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -10,16 +11,16 @@ height = 20.0
 
 [node name="Besucher" type="KinematicBody2D" index="0"]
 
-scale = Vector2( 2.51429, 2.03842 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 20, 32 )
 _sections_unfolded = [ "Offset", "Region" ]
@@ -28,5 +29,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 position = Vector2( 0.375, 0 )
 shape = SubResource( 1 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
 
 

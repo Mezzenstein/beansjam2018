@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://level/level1.gd" type="Script" id=1]
 [ext_resource path="res://level/tilesetlvl1.res" type="TileSet" id=2]
 [ext_resource path="res://level/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://level/Navigation2D.gd" type="Script" id=4]
+[ext_resource path="res://gameobjects/Bank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameobjects/Besucher.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 10 )
 
-[node name="level" type="Node2D" index="0"]
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( 31, 32.5, 704, 32.5, 297.5, 74, 168, 74.5, 294.9, 294, 703.5, 416.5, 32, 417, 168.4, 295, 168.4, 204, 168.5, 165, 294.4, 205, 296.5, 164.5 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 7, 6, 0, 3 ), PoolIntArray( 8, 3, 9 ), PoolIntArray( 1, 5, 4, 10, 11 ), PoolIntArray( 10, 8, 9, 11 ), PoolIntArray( 1, 11, 2 ) ]
+outlines = [ PoolVector2Array( 31, 32.5, 704, 32.5, 703.5, 416.5, 32, 417 ), PoolVector2Array( 168, 74.5, 168.5, 165, 296.5, 164.5, 297.5, 74 ), PoolVector2Array( 168.4, 204, 294.4, 205, 294.9, 294, 168.4, 295 ) ]
+
+[node name="level" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -36,7 +45,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="playerspawn" type="Position2D" parent="." index="1"]
 
-position = Vector2( 197.574, 85.5315 )
+position = Vector2( 197.574, 55.5315 )
 scale = Vector2( 0.320935, 0.320935 )
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
@@ -54,10 +63,56 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 0, -4.76837e-006 )
+position = Vector2( 0, -4.76837e-06 )
 scale = Vector2( 1, 2.46154 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Navigation2D" type="Navigation2D" parent="." index="3"]
+
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D" index="0"]
+
+position = Vector2( 0.5, 0 )
+navpoly = SubResource( 2 )
+enabled = true
+
+[node name="Bank" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 232, 89.5 )
+
+[node name="Bank2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 232, 149.5 )
+
+[node name="Bank3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 232, 219.5 )
+
+[node name="Bank4" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 232, 279.5 )
+
+[node name="Besucher" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 209.5 )
+
+[node name="Besucher2" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 209.5 )
+
+[node name="Besucher3" parent="." index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 209.5 )
+
+[node name="Besucher4" parent="." index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 209.5 )
+
+[node name="Besucher5" parent="." index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 209.5 )
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
 

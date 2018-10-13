@@ -5,8 +5,8 @@
 [ext_resource path="res://level/Area2D.gd" type="Script" id=3]
 [ext_resource path="res://level/Navigation2D.gd" type="Script" id=4]
 [ext_resource path="res://gameobjects/Bank/Bank.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level/Besucherspawn.gd" type="Script" id=6]
-[ext_resource path="res://gameobjects/Besucher/Besucher.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gameobjects/Besucher/Besucher.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gameobjects/Kellner/Kellner.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -73,7 +73,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="3"]
 
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D" index="0"]
@@ -142,47 +141,56 @@ _sections_unfolded = [ "Transform" ]
 [node name="Besucherspawn" type="Position2D" parent="." index="18"]
 
 position = Vector2( 672, 416 )
-script = ExtResource( 6 )
 
-[node name="Besucher" parent="." index="19" instance=ExtResource( 7 )]
+[node name="Besucher" parent="." index="19" instance=ExtResource( 6 )]
 
-[node name="Besucher2" parent="." index="20" instance=ExtResource( 7 )]
+[node name="Besucher2" parent="." index="20" instance=ExtResource( 6 )]
 
-[node name="Besucher3" parent="." index="21" instance=ExtResource( 7 )]
+[node name="Besucher3" parent="." index="21" instance=ExtResource( 6 )]
 
-[node name="Besucher4" parent="." index="22" instance=ExtResource( 7 )]
+[node name="Besucher4" parent="." index="22" instance=ExtResource( 6 )]
 
-[node name="Besucher5" parent="." index="23" instance=ExtResource( 7 )]
+[node name="Besucher5" parent="." index="23" instance=ExtResource( 6 )]
 
-[node name="Besucher6" parent="." index="24" instance=ExtResource( 7 )]
+[node name="Besucher6" parent="." index="24" instance=ExtResource( 6 )]
 
-[node name="Besucher7" parent="." index="25" instance=ExtResource( 7 )]
+[node name="Besucher7" parent="." index="25" instance=ExtResource( 6 )]
 
-[node name="Besucher8" parent="." index="26" instance=ExtResource( 7 )]
+[node name="Besucher8" parent="." index="26" instance=ExtResource( 6 )]
 
-[node name="Besucher9" parent="." index="27" instance=ExtResource( 7 )]
+[node name="Besucher9" parent="." index="27" instance=ExtResource( 6 )]
 
-[node name="Besucher10" parent="." index="28" instance=ExtResource( 7 )]
+[node name="Besucher10" parent="." index="28" instance=ExtResource( 6 )]
 
-[node name="Besucher11" parent="." index="29" instance=ExtResource( 7 )]
+[node name="Besucher11" parent="." index="29" instance=ExtResource( 6 )]
 
-[node name="Besucher12" parent="." index="30" instance=ExtResource( 7 )]
+[node name="Besucher12" parent="." index="30" instance=ExtResource( 6 )]
 
-[node name="Besucher13" parent="." index="31" instance=ExtResource( 7 )]
+[node name="Besucher13" parent="." index="31" instance=ExtResource( 6 )]
 
-[node name="Besucher14" parent="." index="32" instance=ExtResource( 7 )]
+[node name="Besucher14" parent="." index="32" instance=ExtResource( 6 )]
 
-[node name="Besucher15" parent="." index="33" instance=ExtResource( 7 )]
+[node name="Besucher15" parent="." index="33" instance=ExtResource( 6 )]
 
-[node name="Besucher16" parent="." index="34" instance=ExtResource( 7 )]
+[node name="Besucher16" parent="." index="34" instance=ExtResource( 6 )]
 
-[node name="Besucher17" parent="." index="35" instance=ExtResource( 7 )]
+[node name="Besucher17" parent="." index="35" instance=ExtResource( 6 )]
 
-[node name="Besucher18" parent="." index="36" instance=ExtResource( 7 )]
+[node name="Besucher18" parent="." index="36" instance=ExtResource( 6 )]
 
-[node name="Besucher19" parent="." index="37" instance=ExtResource( 7 )]
+[node name="Besucher19" parent="." index="37" instance=ExtResource( 6 )]
 
-[node name="Besucher20" parent="." index="38" instance=ExtResource( 7 )]
+[node name="Besucher20" parent="." index="38" instance=ExtResource( 6 )]
+
+[node name="Kellner" parent="." index="39" instance=ExtResource( 7 )]
+
+[node name="Kellner2" parent="." index="40" instance=ExtResource( 7 )]
+
+[node name="Kellner3" parent="." index="41" instance=ExtResource( 7 )]
+
+[node name="Kellner4" parent="." index="42" instance=ExtResource( 7 )]
+
+[node name="Kellner5" parent="." index="43" instance=ExtResource( 7 )]
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
 

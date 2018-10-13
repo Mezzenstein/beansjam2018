@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
-# target
 var place = null
-var timer = 0
 
 # path
 var path = []
@@ -10,21 +8,15 @@ var currentPathPosition = 0
 var speed = 3000
 
 func _ready():
-	# Find free Place
 	var spawn = get_node("/root/World/level/Besucherspawn")
 	self.global_position = Vector2(spawn.position.x, spawn.position.y)
-	setNewTimer()
 
 func _process(delta):
 	if (path.size() > 0):
 		run(delta)
 		return
 
-	timer -= delta
-	
-	if (timer <= 0):
-		goToNewPlace()
-		return
+	goToNewPlace()
 
 func run(delta):
 	var target = path[currentPathPosition]
@@ -38,14 +30,9 @@ func run(delta):
 		currentPathPosition += 1
 		if currentPathPosition > path.size()-1:
 			path = []
-			rotation = (place.global_position - self.global_position).normalized().angle()
 
 func goToNewPlace():
-	if (place != null):
-		place.unblock()
-
 	findFreePlace()
-	setNewTimer()
 
 	if (place == null):
 		return
@@ -60,10 +47,3 @@ func findFreePlace():
 	var places = get_tree().get_nodes_in_group("places_free")
 
 	place = places[randi() % places.size()]
-
-	if place != null:
-		place.block()
-
-# Random Timer
-func setNewTimer():
-	timer = rand_range(5,20)

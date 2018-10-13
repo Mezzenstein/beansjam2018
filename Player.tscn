@@ -3,35 +3,32 @@
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 18.2331
-height = 20.0
+radius = 10.0
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 10.077, 16 )
-scale = Vector2( 0.314907, 0.5 )
+position = Vector2( -1.66893e-006, -1.66893e-006 )
+scale = Vector2( 0.5, 0.5 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "collision" ]
+_sections_unfolded = [ "Transform" ]
 speed = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -0.814204, -0.939928 )
-scale = Vector2( 3.11251, 2.05111 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 1.55018, -0.588385 )
-scale = Vector2( 1.63137, 1.12155 )
+position = Vector2( 3.33786e-006, 3.33786e-006 )
+scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
 
 

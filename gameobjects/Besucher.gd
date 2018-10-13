@@ -12,6 +12,7 @@ var speed = 3000
 func _ready():
 	# Find free Place
 	self.global_position = Vector2(32, 32)
+	setNewTimer()
 
 func _process(delta):
 	if (path.size() > 0):
@@ -39,6 +40,9 @@ func run(delta):
 			rotation = (place.global_position - self.global_position).normalized().angle()
 
 func goToNewPlace():
+	if (place != null):
+		place.unblock()
+
 	findFreePlace()
 	setNewTimer()
 
@@ -51,14 +55,13 @@ func goToNewPlace():
 	print(path.size())
 	currentPathPosition = 0
 	self.update()
-	
 
 func findFreePlace():
 	var places = get_tree().get_nodes_in_group("places_free")
 
-	place = places.pop_front()
+	place = places[randi() % places.size()]
 
-	if (place != null):
+	if place != null:
 		place.block()
 
 # Random Timer

@@ -11,7 +11,8 @@ var speed = 3000
 
 func _ready():
 	# Find free Place
-	self.global_position = Vector2(32, 32)
+	var spawn = get_node("/root/World/level/Besucherspawn")
+	self.global_position = Vector2(spawn.position.x, spawn.position.y)
 	setNewTimer()
 
 func _process(delta):
@@ -52,7 +53,6 @@ func goToNewPlace():
 	var nav = get_node("/root/World/level/Navigation2D")
 	path = nav.getPath(self, place.global_position)
 
-	print(path.size())
 	currentPathPosition = 0
 	self.update()
 
